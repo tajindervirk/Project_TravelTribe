@@ -1,0 +1,158 @@
+<% layout("/layouts/boilerplate") -%>
+
+    <body>
+
+            <div class="filter-container">
+                <button class="filter-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse"
+                    aria-controls="filterCollapse" aria-expanded="false" aria-label="Toggle filters">
+                    <i class="fas fa-filter"></i> Filters
+                </button>
+                <div class="collapse" id="filterCollapse">
+                    <div id="filters">
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="all">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>All</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="trending">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-fire fa-bounce"></i>
+                                </div>
+                                <p>Trending</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="river">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-sailboat"></i>
+                                </div>
+                                <p>River</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="iconic-cities">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-mountain-city"></i>
+                                </div>
+                                <p>Iconic Cities</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="mountains">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-mountain"></i>
+                                </div>
+                                <p>Mountains</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="castles">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-brands fa-fort-awesome"></i>
+                                </div>
+                                <p>Castles</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="amazing-pools">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-person-swimming"></i>
+                                </div>
+                                <p>Amazing Pools</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="camping">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-tents"></i>
+                                </div>
+                                <p>Camping</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="farms">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-tractor"></i>
+                                </div>
+                                <p>Farms</p>
+                            </button>
+                        </form>
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="arctic">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-snowflake"></i>
+                                </div>
+                                <p>Arctic</p>
+                            </button>
+                        </form>
+
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="beach">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-umbrella-beach"></i>
+                                </div>
+                                <p>Beach</p>
+                            </button>
+                        </form>
+
+                        <form class="filter" action="/listings" method="GET">
+                            <input type="hidden" name="filter" value="lake">
+                            <button type="submit">
+                                <div>
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <p>Lake</p>
+                            </button>
+                        </form>
+
+                        <div class="tax-toggle">
+                            <div class="form-check-reverse form-switch ">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after
+                                    taxes</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3">
+            <% for(let listing of allListings) { %>
+                <div class="card col listing-card">
+                    <a href="/listings/<%=listing._id%>" class="listing-link">
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image"
+                            style="height: 20rem;" />
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>
+                                    <%= listing.title %>
+                                </b> <br />
+                                &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                                    <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+
+
+    </body>

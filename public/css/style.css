@@ -1,0 +1,370 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction:column;
+  min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/*+ Navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+    z-index: 1000;
+}
+
+/* Icon */
+.fa-mountain-sun{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+/* Options */
+.nav-link{
+    color: #222222 !important;    
+}
+
+
+.navbar-collapse {
+    background-color: white;
+    padding: 1rem;
+}
+
+/* For smaller screens */
+@media (max-width: 991.98px) { 
+    .navbar-collapse {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    
+    .navbar-collapse .d-flex {
+        margin: 1rem 0;
+    }
+}
+
+
+/*+ Footer */
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center ;
+
+}
+
+/*+ Cards */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text{
+    font-weight: 400 !important;
+    color: #222222;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* For Small Screens */
+@media (max-width: 575px) {
+        .row-cols-sm-1 {
+            flex-direction: column;
+        }
+    
+        .listing-card {
+            width: 100% !important; /* Override any existing width */
+            margin-bottom: 1.5rem; /* Add some space between cards */
+        }
+    
+        /* Adjust card image height if needed */
+        .listing-card img {
+            height: 13rem !important; /* Slightly smaller height for mobile */
+            object-fit: cover;
+        }
+}
+
+/* New/Add  Page */
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.add-btn:hover{
+    opacity: 0.78;
+    background-color: white;
+}
+
+
+/* Edit Page */
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn:hover{
+    opacity: 0.78;
+    background-color: white;
+}
+
+/*  Show Page */
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Filter Icons */
+.filter-container {
+    margin-top: 0.3rem;
+}
+
+.filter-toggler {
+    display: none;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    text-align: left;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+    position: relative;
+}
+
+#filterCollapse {
+    transition: all 0.5s ease-in-out;
+}
+
+#filterCollapse.collapse:not(.show) {
+    display: none;
+}
+
+#filterCollapse.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+#filterCollapse.collapse.show {
+    display: block;
+    height: auto;
+}
+
+form.filter.active {
+    opacity: 1;
+}
+
+form.filter button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+}
+
+form.filter button::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+form.filter button:hover:after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+form.filter:hover {
+    opacity: 1;
+}
+
+form.filter p {
+    font-size: 0.8rem;
+}
+
+@media (min-width: 992px) {
+    #filterCollapse {
+        display: block !important;
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 991.98px) {
+    .filter-toggler {
+        display: block;
+    }
+
+    #filterCollapse:not(.show) {
+        display: none;
+    }
+
+    #filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    form.filter {
+        margin-right: 0;
+        margin-top: 1rem;
+        width: auto;
+        flex:0 1 auto;
+    }
+}
+
+/* Map */
+#map { 
+    height: 400px;
+    width: 65vh;
+}
+
+.icon{
+    color: #ffffff;
+    font-size: 1rem; 
+}
+
+.marker {
+    background-color: rgba(255, 0, 0, 0.8); 
+    width: 45px;
+    height: 45px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.marker:hover{
+    background-color: #ebebeb;
+    .icon{
+        color: #ef0000;
+    }
+}
+
+  .mapboxgl-popup {
+    max-width: 200px;
+    border-radius: 30px;
+  }
+
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+/* Tax Switch */
+.tax-info{
+    display: none;
+}
+
+.tax-toggle{
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Seach bar button */
+.d-flex .search-btn{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+}
+.d-flex .search-btn:hover{
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.d-flex .search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.d-flex .search-input{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+}
