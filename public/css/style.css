@@ -122,7 +122,7 @@ body{
 }
 
 /* For Small Screens */
-@media (max-width: 575px) {
+@media (max-width: 991.98px) {
         .row-cols-sm-1 {
             flex-direction: column;
         }
@@ -261,7 +261,7 @@ form.filter p {
     font-size: 0.8rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991.98px) {
     #filterCollapse {
         display: block !important;
     }
@@ -367,4 +367,85 @@ form.filter p {
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
     font-size: 1rem;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 991.98px) {
+    .show-map {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    
+    .show-map #map {
+        width: 37vh;
+        height: 250px;
+        margin-top: 10px;
+        border-radius: 10px;
+    } 
+
+    .row.mt-3.showpage .card {
+        width: 100%; 
+        margin: 0 auto; 
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body{
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 15px;
+    }
+
+    .card-text {
+        margin-left: 15px;
+        text-align: left;
+    }
+
+    #heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px;
+    }
+
+    #heading h3 {
+        font-size: 1.5rem;
+        margin: 0; 
+        color: #343a40;
+    }
+
+    #AddReview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 0;
+        margin: 20px 0;
+    }
+
+    #AddReview h4 {
+        margin-bottom: 15px; /* Space below the heading */
+        color: #343a40; /* Dark text color for contrast */
+    }
+
+    #AddReview form {
+        width: 100%; /* Ensure the form takes full width */
+        max-width: 600px; /* Optional: limit the maximum width for better readability */
+    }
+
+    #AddReview .form-label {
+        margin-bottom: 5px; /* Space below labels */
+    }
+
+    #AddReview .form-control {
+        margin-bottom: 15px; /* Space below inputs */
+    }
+
 }
