@@ -40,6 +40,7 @@
         </div>
         <% } %>
 
+
         <div class="col-8 offset-3 mb-3" id="AddReview">
             <% if(currentUser) { %>
             <hr>
@@ -77,15 +78,16 @@
             <% } %>
 
             <% if(listing.reviews.length > 0) { %>
-            <div class="row">
-                <p><b>Visitors Reviews</b></p>
+            <div class="row" id="reviews">
+                <p id="vReviews"><b>Visitors Reviews</b></p>
+                <div class="reviews-container">
                 <% for(review of listing.reviews) { %>
-                    <div class="card col-5 ms-3 mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">@<%= review.author.username %></h5>
-                            <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-                            <p class="card-text">
-                                <%= review.comment %>
+                    <div class="card col-lg-11 ms-3 mb-3 ps-2">
+                        <div class="card-body review-card">
+                            <h5 class="card-title mb-1">@<%= review.author.username %></h5>
+                            <p class="starability-result card-text offset-5" data-rating="<%= review.rating %>"></p>
+                            <p class="card-text mt-3 mb-3">
+                                "<%= review.comment %>"
                             </p>
                         </div>
                         <% if(currentUser && currentUser._id.equals(review.author._id)) {%>
@@ -95,6 +97,7 @@
                         <% } %>
                     </div>
                     <% } %>
+                </div>
             </div>
             <% } %>
         </div>
