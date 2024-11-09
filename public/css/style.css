@@ -164,7 +164,7 @@ body{
 
 /*  Show Page */
 .show-img{
-    height: 30vh;
+    height: 50vh;
 }
 
 .btns{
@@ -174,6 +174,82 @@ body{
 .show-card{
     padding-left: 0;
     padding-right: 0;
+    padding-top: 8px;
+}
+
+#heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+#heading h3 {
+    font-size: 2.5rem;
+    margin: 0; 
+    color: #343a40;
+}
+
+#AddReview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+#AddReview h4 {
+    font-size: 2.5rem;
+    margin-bottom: 15px; /* Space below the heading */
+    color: #343a40; /* Dark text color for contrast */
+}
+
+#AddReview form {
+    width: 100%; /* Ensure the form takes full width */
+    max-width: 600px; /* Optional: limit the maximum width for better readability */
+}
+
+#AddReview .form-label {
+    margin-bottom: 5px; /* Space below labels */
+}
+
+#AddReview .form-control {
+    margin-bottom: 15px; /* Space below inputs */
+}
+
+#reviews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.reviews-container {
+    max-height: 400px; /* Set a maximum height for the container */
+    width: 90vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column; /* Stack reviews vertically */
+    scrollbar-width: none;
+}
+
+.reviews-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.review-card {
+    margin-bottom: 1.2rem; /* Space between reviews */
+    width: 100%; /* Ensure cards take full width of the container */
+}
+
+#vReviews{
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 10px;
 }
 
 /* Filter Icons */
@@ -295,7 +371,9 @@ form.filter p {
 /* Map */
 #map { 
     height: 400px;
-    width: 65vh;
+    width: 85vh;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
 .icon{
@@ -330,6 +408,17 @@ form.filter p {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
   }
+
+  .show-map {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.show-map h3{
+    font-size: 2.5rem;
+}
 
 /* Tax Switch */
 .tax-info{
@@ -369,6 +458,8 @@ form.filter p {
     font-size: 1rem;
 }
 
+
+/* Show Page */
 /* Media Queries for Smaller Screens */
 @media (max-width: 991.98px) {
     .show-map {
@@ -379,7 +470,7 @@ form.filter p {
     }
     
     .show-map #map {
-        width: 37vh;
+        width: 42vh;
         height: 250px;
         margin-top: 10px;
         border-radius: 10px;
@@ -448,4 +539,57 @@ form.filter p {
         margin-bottom: 15px; /* Space below inputs */
     }
 
+    .btns {
+        display: flex; /* Use flexbox to align buttons in a row */
+        justify-content: center; /* Center the buttons */
+        width: 85%; /* Full width of the parent container */
+        margin: 1rem 0; /* Optional: add vertical margin for spacing */
+        overflow: hidden; /* Prevent overflow */
+        padding-bottom: 1rem;
+    }
+
+    .btns .edit-btn, .btns .add-btn { 
+        flex: 1; /* Allow buttons to grow equally */
+        margin: 0 0.5rem; /* Add horizontal margins to the buttons */
+        max-width: 90px; /* Set a max-width to prevent cropping */
+    }
+
+
+    #reviews {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 1rem; /* Add some padding for better spacing */
+    }
+
+    #reviews .reviews-container {
+        max-height: 250px; /* Adjust maximum height for smaller screens */
+        width: 90%; /* Change width to a percentage for better responsiveness */
+        overflow-y: auto; /* Enable vertical scrolling */
+        display: flex;
+        flex-direction: column; /* Stack reviews vertically */
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+    }
+
+    #reviews .reviews-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+
+    #reviews .reviews-container .review-card {
+        margin-bottom: 1rem; /* Reduce space between reviews */
+        width: 37vh; /* Ensure cards take full width of the container */
+        padding: 0.5rem; /* Add some padding for better appearance */
+    }
+
+    #reviews #vReviews {
+        font-size: 1.8rem; /* Reduce font size for smaller screens */
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .review-card .offset-5{
+        margin-left: 2.666667%;
+    }
 }
