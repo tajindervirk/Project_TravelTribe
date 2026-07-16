@@ -192,8 +192,6 @@ CLOUD_API_SECRET=your_cloudinary_api_secret
 MAP_TOKEN=pk.eyJ1IjoieW91cnVzZXJuYW1lIiwiYSI6InlvdXJ0b2tlbiJ9.yourtokenhere
 ```
 
-> **⚠️ Never commit your `.env` file.** It's already in `.gitignore`.
-
 ### 4. (Optional) Seed the Database
 
 Populate the database with sample listings:
